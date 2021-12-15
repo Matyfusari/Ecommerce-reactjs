@@ -4,9 +4,9 @@ function Item({prod}) {
     return (
         <div 
                                                   key={prod.id}
-                                                  className='cold-md-4 cart '
+                                                  className='cold-xs-4 cart grid-columns'
                                                 > 
-                                                    <div className= "card card-columns w-50 mt-4">
+                                                    <div className= "card">
                                                         <div className='card-header'>
                                                            {`${prod.name} - ${prod.categoria}`}
                                                         </div>

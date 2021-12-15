@@ -1,0 +1,20 @@
+.logo{
+    width: 10%;
+    height: 10%;
+    position: relative;
+    left: 20px;
+    border-radius: 20px;
+  }
+  .navbar-expand-lg .navbar-collapse{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .nav-item{
+    font-size: 25px;
+    font-weight: bold;
+    
+  }
+  .bg-dark-color{
+     background-color: #FFD7FA   ;
+  }
