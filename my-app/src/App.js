@@ -1,22 +1,42 @@
+import {  BrowserRouter, Routes, Route} from 'react-router-dom'
+import NavBar from './componets/NavBar/NavBar';
+import ItemListContainer from './componets/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './componets/ItemDetailContainer/ItemDetailContainer';
+import Cart from './componets/Cart/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import ItemListContainer from './componets/ItemListContainer/ItemListContainer';
-import NavBar from './componets/NavBar/NavBar';
-import ItemCount from './componets/ItemCount/ItemCount';
-import ItemDetailContainer from './componets/ItemDetailContainer/ItemDetailContainer';
-
 
 function App() {
-  const inicial =1
-  const max =10
+  
   return (
-    <center>
-      <NavBar/>
-      hola soy app de e-commerce
-      <ItemListContainer greeting = "hola soy ItemListContainer que vengo de app" />
-      <ItemDetailContainer />
-      <ItemCount inicial={inicial} max={max}/>
-    </center>
+    <BrowserRouter>
+              <center>
+                <NavBar/>
+                <Routes>
+                      <Route 
+                        exact
+                        path="/" 
+                        element={ <ItemListContainer greeting='hola soy ItemListContainer que vengo de app' />} 
+                     />
+                     <Route 
+                        exact
+                        path="/categoria/:idCate" 
+                        element={ <ItemListContainer greeting='hola soy ItemListContainer que vengo de app' />} 
+                     />
+                     <Route 
+                        exact
+                        path="/detalle/:id" 
+                        element={ <ItemDetailContainer />} 
+                     /> 
+                     <Route 
+                        exact
+                        path="/cart" 
+                        element={ <Cart />} 
+                     /> 
+                  </Routes>
+                 
+              </center>
+    </BrowserRouter>
   );
 }
 

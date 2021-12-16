@@ -1,20 +1,41 @@
-.logo{
-    width: 10%;
-    height: 10%;
-    position: relative;
-    left: 20px;
-    border-radius: 20px;
+.bg-dark-color{
+     background-color: #FFD7FA;
   }
-  .navbar-expand-lg .navbar-collapse{
-    display: flex;
-    justify-content: center;
-    
+  @media only screen and (min-width: 1240px){
+    .logo{
+      width: 15%;
+      height: 15%;
+      border-radius: 20px;
+      position: relative;
+      right: 150px;
+    }
+    .NavBar{
+      text-decoration: none;
+      position: relative;
+      left: 280px;
+      font-weight: bold;
+      font-size: 25px;
+      color: black;
+    }
+    .Carrito{
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 25px;
+      color: black;
+    }
   }
-  .nav-item{
-    font-size: 25px;
+
+  /*vista mobile*/
+@media only screen and (min-width: 0px) and (max-width: 767px){
+  .nav{
     font-weight: bold;
-    
+    font-size: 20px;
+    color: black;
   }
-  .bg-dark-color{
-     background-color: #FFD7FA   ;
+  .logo{
+    width: 35%;
+    height: 35%;
+    border-radius: 20px;
+ 
   }
+}
