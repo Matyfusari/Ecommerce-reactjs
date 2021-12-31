@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
                 :
                     <div className='border border-3 border-secondary'>
                         <ItemDetail prod={prod} />                        
-                                                
+                                              
                     </div>
             }            
         </>

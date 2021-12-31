@@ -5,11 +5,14 @@ import ItemDetailContainer from './componets/ItemDetailContainer/ItemDetailConta
 import Cart from './componets/Cart/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import CartContextProvider, { CartContext } from './componets/context/CartContext';
+
 
 function App() {
   
   return (
-    <BrowserRouter>
+   <CartContextProvider>
+      <BrowserRouter>
               <center>
                 <NavBar/>
                 <Routes>
@@ -36,7 +39,8 @@ function App() {
                   </Routes>
                  
               </center>
-    </BrowserRouter>
+      </BrowserRouter>
+   </CartContextProvider> 
   );
 }
 
