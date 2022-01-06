@@ -1,29 +1,53 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
+// import { useCartContext } from '../../../context/CartContext'
 
-const Counter = ({ stock, onAdd }) => {
-    const [number, setNumber] = useState(1);
+function ItemCount({stock = 1, onAdd}) {
 
-    const add = () => {
-        number !== stock && setNumber(number + 1);
-    };
-    const substract = () => {
-        number !== 0 && setNumber(number - 1);
-    };
+    console.log("ItemCount")
+   
+    
+    const [count, setCount] = useState(1)
+
+
+    function sumar() {
+
+        console.log("Sumar")
+        if (count < stock) {
+            setCount(count + 1)  
+        }
+        // props.onAdd(count)
+        console.log(count)
+        
+    }
+
+    function restar() {
+
+        if (count > 1) {
+            setCount(count - 1)
+        }
+    }
+
+    function handleClik() {
+        onAdd(count)
+    }
 
     return (
-        <div style={{ width: '70%' }}>
-            <p>{number}</p>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <button onClick={add} disabled={number === stock}>
-                    +
-                </button>
-                <button onClick={substract}>-</button>
-                <button disabled={number === 0} onClick={() => onAdd(number)}>
-                    Agregar al carrito
-                </button>
-            </div>
-        </div>
-    );
-};
+        <div className="h6 qtyBox d-flex align-items-center justify-content-around border w-75">
+            <button onClick={restar}>
+                -
+            </button>
+            <div >
+                {count}
+                {/* {props.count} */}
+            </div>       
+            <button  onClick={sumar}>
+                +
+            </button><br/>
 
-export default Counter;
+            
+            <button onClick={handleClik}>Agregar Carrito</button>
+        </div>
+    )
+}
+
+export default ItemCount

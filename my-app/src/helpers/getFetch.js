@@ -12,4 +12,3 @@ export const getFetch = new Promise((resolve)=>{
          resolve(productos)
      }, 3000)
 }) // instanciar un objeto 
-
