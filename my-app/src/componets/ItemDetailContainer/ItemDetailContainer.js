@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import { getFetch } from '../../helpers/getFetch'
+import { collection, doc, getDoc, getFirestore } from 'firebase/firestore'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
@@ -9,13 +9,17 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {        
-        getFetch
-            .then(resp => setProd(resp.find(prod => prod.id === parseInt(id)))) 
+       
+
+            const db = getFirestore()
+            const queryDb = doc(db, 'items', id)
+            getDoc(queryDb)
+            .then(resp => setProd( { id: resp.id, ...resp.data() } ))
             .catch(err => console.log(err))
             .finally(()=>setLoading(false))
-        // eslint-disable-next-line       
+               
     },[]) 
- 
+    console.log(prod)
     
     return (
         <>
@@ -24,7 +28,6 @@ const ItemDetailContainer = () => {
                 :
                     <div className='border border-3 border-secondary'>
                         <ItemDetail prod={prod} />                        
-                                              
                     </div>
             }            
         </>
@@ -32,4 +35,5 @@ const ItemDetailContainer = () => {
 }
 
 export default ItemDetailContainer
+
 

@@ -28,6 +28,7 @@ function ItemDetail({prod}) {
                     <div className="container">
                         <img  src={prod.imagenID} className="w-25" alt="foto" />
                         <br/>
+                        <label>{prod.descripcion}</label><br/>
                         <label>{prod.categoria}</label>
                     </div>
                     <div className="container">

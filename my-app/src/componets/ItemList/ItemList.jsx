@@ -15,4 +15,4 @@ const ItemList = memo(
     }
 , (oldProps, newProps)=> oldProps.productos.length === newProps.productos.length ) 
 
-export default ItemList
+export default ItemList 
