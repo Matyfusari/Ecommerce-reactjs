@@ -31,19 +31,31 @@ function CartContextProvider({children}) {
           }
       }
 
+      const precioTotal =()=>{
+        return cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
+      }
+      
+      const mostrarListado =()=>{
+          console.log(cartList)
+      }
+  
+      const borrarItem = (id) => {
+        setCartList( cartList.filter(prod => prod.id !== id) )
+        }
+  
 
 
-
-    function borrarCarrito() {
-        setCartList([])
-    }
+      function borrarCarrito() {
+          setCartList([])
+      }
     
 
     return (
         <CartContext.Provider value={{
             cartList,
             agregarAlCarrito,
-            borrarCarrito
+            borrarCarrito,
+            precioTotal
         }}>
             { children }
         </CartContext.Provider>
