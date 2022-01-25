@@ -1,53 +1,51 @@
-import { useState } from 'react'
-// import { useCartContext } from '../../../context/CartContext'
+import { useState } from "react";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import "./ItemCount.css";
 
-function ItemCount({stock = 1, onAdd}) {
-
-    console.log("ItemCount")
-   
-    
-    const [count, setCount] = useState(1)
-
-
-    function sumar() {
-
-        console.log("Sumar")
-        if (count < stock) {
-            setCount(count + 1)  
-        }
-        // props.onAdd(count)
-        console.log(count)
-        
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [quantity, setQuantity] = useState(initial);
+  
+  const addQuantity = () => {
+    setQuantity((prev) => prev + 1);
+    if (quantity === stock) {
+      setQuantity(quantity);
     }
-
-    function restar() {
-
-        if (count > 1) {
-            setCount(count - 1)
-        }
+  };
+  const removeQuantity = () => {
+    setQuantity((prev) => prev - 1);
+    if (quantity === 1) {
+      setQuantity(1);
     }
+  };
 
-    function handleClik() {
-        onAdd(count)
-    }
-
-    return (
-        <div className="h6 qtyBox d-flex align-items-center justify-content-around border w-75">
-            <button onClick={restar}>
-                -
+  return (
+    <>
+      {stock <= 0 ? (
+        <button className="outOfStock" disabled>
+          No disponible
+        </button>
+      ) : (
+        <>
+          <div>
+            <button className="remove" onClick={removeQuantity}>
+              <FaMinus className="faQuantity" />
             </button>
-            <div >
-                {count}
-                {/* {props.count} */}
-            </div>       
-            <button  onClick={sumar}>
-                +
-            </button><br/>
+            <input className="quantity" value={quantity} readOnly={true}/>
+            <button className="add" onClick={addQuantity}>
+            <FaPlus className="faQuantity" />
+            </button>
+          </div>
+          <button
+            type="submit"
+            className="addCart"
+            onClick={() => onAdd(parseInt(quantity))}
+          >
+            Agregar al carrito
+          </button>
+        </>
+      )}
+    </>
+  );
+};
 
-            
-            <button onClick={handleClik}>Agregar Carrito</button>
-        </div>
-    )
-}
-
-export default ItemCount
+export default ItemCount;

@@ -1,11 +1,15 @@
 import {  BrowserRouter, Routes, Route} from 'react-router-dom'
-import NavBar from './componets/NavBar/NavBar';
+import { ToastContainer } from 'react-toastify';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Header from './componets/header/Header';
+import Home from './componets/Home/Home';
 import ItemListContainer from './componets/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './componets/ItemDetailContainer/ItemDetailContainer';
 import Cart from './componets/Cart/Cart';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css'
 import CartContextProvider, { CartContext } from './componets/context/CartContext';
+import Checkout from './componets/Checkout/Checkout';
+import Footer from './componets/Footer/Footer';
 
 
 function App() {
@@ -13,18 +17,24 @@ function App() {
   return (
    <CartContextProvider>
       <BrowserRouter>
-              <center>
-                <NavBar/>
+              <div className='App'>
+               <Header/>
+              
                 <Routes>
                       <Route 
-                        exact
-                        path="/" 
-                        element={ <ItemListContainer greeting='hola soy ItemListContainer que vengo de app' />} 
+                        
+                        path="Home/" 
+                        element={ <Home greetings="Bienvenidos A Hamdade Style By Marita" />} 
+                     />
+                     <Route
+                        path="/all"
+                        element={
+                      <ItemListContainer greetings='Nuestros Productos' />}
                      />
                      <Route 
                         exact
-                        path="/categoria/:idCate" 
-                        element={ <ItemListContainer greeting='hola soy ItemListContainer que vengo de app' />} 
+                        path="/categoria/:idcategoria" 
+                        element={ <ItemListContainer greeting='' />} 
                      />
                      <Route 
                         exact
@@ -36,9 +46,15 @@ function App() {
                         path="/cart" 
                         element={ <Cart />} 
                      /> 
+                      <Route 
+                        exact
+                        path="/checkout" 
+                        element={<Checkout/>}/>
+                  
                   </Routes>
-                 
-              </center>
+                  <Footer/>  
+               </div>
+              <ToastContainer/>
       </BrowserRouter>
    </CartContextProvider> 
   );

@@ -1,0 +1,59 @@
+@media only screen and (min-width: 375px) {
+  .checkoutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(40deg, #6568A6 10%, #fff 94%);
+    padding: 20px;
+    border-radius: 1rem;
+  }
+  
+  .checkoutForm input, select {
+    width: 80%;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    color: #8083bb;
+  }
+  ::placeholder {
+    color: #8083bb;
+  }
+  .errorInput {
+    color: #8083bb;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    background-color: #ffffff49;
+    width: 25rem;
+    padding: .5rem;
+    border-radius: .5rem;
+  }
+  .btn-order {
+    width: 10rem;
+    height: 2rem;
+    margin: 2rem;
+    padding: .5rem;
+    color: #fff;
+    background-color: var(--color-primario);
+    font-size: .6rem;
+    font-weight: 700;
+    border: 1px solid #fff;
+    border-radius: .3rem;
+    text-decoration: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .checkoutForm input, select {
+    width: 50%;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    color: #8083bb;
+  }
+}

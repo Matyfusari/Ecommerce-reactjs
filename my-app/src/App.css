@@ -2,5 +2,66 @@
 body{
     background-color: #FFE3FC ;
 }
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;900&display=swap');
 
+:root {
+  --color-primario: black;
+  --color-secundario: #6568A6;
+  --color-terciario: #FFD7FA;
+  --color-sombreado: #7e82c511;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  list-style: none;
+  font-family: 'Raleway', sans-serif;
+}
+.loading {
+  animation: loading 2s infinite;
+  margin: 3rem;
+  width: 9rem;
+  height: 9rem;
+}
+  .App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 9em;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 9em;
+  }
+@keyframes loading {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  75% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 

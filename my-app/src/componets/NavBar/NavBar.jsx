@@ -1,30 +1,80 @@
-import {Link, NavLink} from 'react-router-dom'
-import CartWidget from '../CartWidget/CartWidget'
-import './NavBar.css'
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 
-function NavBar() {
-    return (
-        
-      <Navbar collapseOnSelect expand="lg" bg="dark-color" className='color'>
-      <Container>
-      <img src="./img/Handmade style1.png" alt="" className='logo'/>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className=" nav">
-          <NavLink className='NavBar' activeClassName='' to="/">Home</NavLink>
-          <Link className='NavBar' to="/categoria/Tortas">Tortas</Link>
-          <NavLink className="NavBar" activeClassName='' to="/categoria/Tartas">Tartas</NavLink>   
-        <CartWidget/>
-        </Nav>
-      </Navbar.Collapse>
-      <Link className='Carrito' to="/Cart" >Carrito</Link>   
-      </Container>
-    </Navbar>
-    )
-}
+import { NavLink } from "react-router-dom";
+import CartWidget from "../CartWidget/CartWidget";
+import { FaHome, FaList } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import {
+  collection,
+  getDocs,
+  getFirestore
+} from "firebase/firestore";
+import './NavBar.css';
 
-export default NavBar
+const NavBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore();
+    const queryCategory = collection(db, "items");
+    getDocs(queryCategory).then((resp) => {
+        setCategories(
+          resp.docs
+            .map((item) => item.data().category)
+            .reduce(
+              (acc, item) => (acc.includes(item) ? acc : [...acc, item]),
+              []
+            )
+        );
+    });
+  }, []);
+
+  return (
+    <>
+      <nav className="menu">
+        <ul>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "isActive" : "")}
+              to="Home/"
+            >
+              <FaHome className="icon"/>
+              INICIO
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "isActive" : "")}
+              to="/all"
+            >
+              <FaList className="icon"/>
+              PRODUCTOS
+            </NavLink>
+            <ul>
+              {categories.map((categoria) => (
+                <li key={categoria}>
+                <NavLink
+                  className={({ isActive }) => (isActive ? "isActive" : "")}
+                  to={`/categoria/${categoria}`}
+
+                >
+                  {categoria}
+                </NavLink>
+              </li>
+              ))}
+            </ul>
+          </li>
+          <CartWidget />
+        </ul>
+      </nav>
+    </>
+  );
+};
+export default NavBar;
+
+
+
+
+
+
+
+

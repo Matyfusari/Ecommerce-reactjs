@@ -1,0 +1,24 @@
+@media only screen and (min-width: 375px) {
+    .sectionDetail {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      margin: 1rem
+    }
+    
+  }
+  @media only screen and (min-width: 768px) {
+    .sectionDetail {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      margin: 1rem
+    }
+  
+  }

@@ -1,49 +1,41 @@
-import {useState} from 'react'
-// import { CartContext } from '../../context/CartContext';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import { Col, Row } from "react-bootstrap"
-import { useCartContext } from '../context/CartContext';
+import { useCartContext } from "../context/CartContext";
+import {toast} from 'react-toastify';
+import "./ItemDetail.css"
+const ItemDetail = ({ prod, onAdd }) => {
+  const [goCart, setGoCart] = useState(false);
 
-function ItemDetail({prod}) {
-    const [count, setCount] = useState(0)
+  const { addToCart } = useCartContext();
 
-    const {cartList ,agregarAlCarrito}= useCartContext()
-
-    function onAdd (cant){
-        console.log(cant)
-        agregarAlCarrito( {...prod, cantidad:cant} ) 
-        
-    }
+  onAdd = (quantity) => {
+     addToCart({ ...prod, quantity: quantity });
+     setGoCart(true);
     
-    console.log(cartList);
-    return (
-        
-        <Row >
-            <label>Soy el detalle</label>
-            <Col>                
-                <div className='card w-50'>
-                    <div className="container">
-                        <label>{prod.name}</label>
-                    </div>
-                    <div className="container">
-                        <img  src={prod.imagenID} className="w-25" alt="foto" />
-                        <br/>
-                        <label>{prod.descripcion}</label><br/>
-                        <label>{prod.categoria}</label>
-                    </div>
-                    <div className="container">
-                        <label>{prod.price}</label>
-                    </div>
-                </div>
-            </Col>
-            <Col>                
-                <ItemCount onAdd={onAdd} stock={10}/>      
-            </Col>                           
-        </Row>
+  };
 
-       
-    )
-}
+  return (
+    <div className="itemDetail" key={prod.id}>
+      <h2 className="nameDetailProduct">{prod.name}</h2>
+      <img
+        src={prod.imagenID}
+        alt="Imagen detalle de producto"
+        className="imgDetailProduct"
+      />
+      <p className="priceDetailProduct">Precio: ${prod.price}</p>
+      <p className="stock">Stock: {prod.stock}</p>
+      <p className="descriptionDetailProduct">{prod.description}</p>
+      {goCart === false ? (
+        <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} />
+      ) : (
+        <Link className="goCart" to="/Cart">
+          Ir al carrito
+        </Link>
+      )}
+    </div>
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;
 

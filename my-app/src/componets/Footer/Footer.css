@@ -1,0 +1,53 @@
+@media only screen and (min-width: 1240px){
+    .footerbg{
+        display: flex;
+        background: #FFD7FA;
+        text-align: center;
+    }
+    .txtFooter{
+        font-size: 35px;
+        font-weight: bold;
+        position: relative;
+        top: 80px;
+    }
+   .imgFoot{
+        position: relative;
+        right: 110px;
+        width: 14rem;
+        height: 14rem;
+        margin: 0.9rem;
+    }
+    .linkk{
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 70px;
+        
+    }
+    
+}
+@media only screen and (min-width: 0px) and (max-width: 767px){
+
+.footerbg{
+    display: flex;
+    flex-direction:column-reverse;
+    text-align: center;
+}
+.txtFooter{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.imgFoot{
+    display: none;
+}
+.linkk{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 18px;
+}
+}
+

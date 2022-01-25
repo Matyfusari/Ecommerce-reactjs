@@ -1,43 +1,79 @@
-.bg-dark-color{
-     background-color: #FFD7FA;
-  }
-  @media only screen and (min-width: 1240px){
-    .logo{
-      width: 15%;
-      height: 15%;
-      border-radius: 20px;
-      position: relative;
-      right: 150px;
-    }
-    .NavBar{
-      text-decoration: none;
-      position: relative;
-      left: 280px;
-      font-weight: bold;
-      font-size: 25px;
-      color: black;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    .Carrito{
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 25px;
-      color: black;
-    }
-  }
 
-  /*vista mobile*/
-@media only screen and (min-width: 0px) and (max-width: 767px){
-  .nav{
-    font-weight: bold;
-    font-size: 20px;
-    color: black;
+  @media only screen and (min-width: 375px) {
+    .menu {
+      background-color:#FFD7FA; 
+      height: 3rem;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .menu ul {
+      height: 3rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+    }
+    
+    .menu ul a {
+      display: block;
+      padding: .5rem;
+    }
+    
+    .menu ul li {
+      position: relative;
+      float: left;
+      margin: 0;
+      padding: 0;
+      height: 3rem;
+      width: 100%;
+      border: 1px solid var(color);
+    }
+    
+    .menu ul li:hover {
+      background-color: var(--color-terciario);
+    }
+    
+    .isActive {
+      height: 3rem;
+      width: 100%;
+      background-color: var(--color-terciario);
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+    }
+    .icon {
+      margin-right: .5rem;
+      font-size: 1.5rem;
+    }
+    .menu ul li a {
+      width: 100%;
+      height: 3rem;
+      color: black;
+      font-size: .6rem;
+      font-weight: 400;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: capitalize;
+    }
+    
+    .menu ul ul {
+      display: none;
+    }
+    
+    .menu ul ul li {
+      float: none;
+      width: 100%;
+      height: 3rem;
+      background-color: var(--color-terciario);
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .menu ul li:hover>ul {
+      display: block;
+    }
   }
-  .logo{
-    width: 35%;
-    height: 35%;
-    border-radius: 20px;
- 
-  }
-}

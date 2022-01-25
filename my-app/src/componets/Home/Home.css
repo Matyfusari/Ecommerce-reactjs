@@ -1,0 +1,48 @@
+@media only screen and (min-width: 375px) {
+  main {
+    text-align: center;
+    color: var(--color-primario);
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #FFE3FC ;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+  .enunciado {
+    font-size: 2rem;
+    margin: 6rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .enunciado small {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--color-secundario);
+    font-weight: 400;
+  }
+  .Titulo{
+    color: var(--color-secundario);
+    font-weight: bold;
+
+  }
+}
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 3rem 0;
+  }
+  main h2 {
+margin-bottom: 3rem;  
+}
+.h2{
+  color: var(--color-secundario);
+}
+}

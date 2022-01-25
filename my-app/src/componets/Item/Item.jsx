@@ -1,31 +1,22 @@
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { memo } from "react";
+import "./Item.css";
+const Item = memo(({ prod }) => {
+  return (
+    <div className="cardProduct" key={prod.id}>
+       <Link to={`/detalle/${prod.id}`} className="linkItem">
+      <img
+        src={prod.imagenID}
+        alt="Imagen de producto"
+        className="imgCardProduct"
+      />
+      <h3 className="nameProduct">{prod.name}</h3>
+      <h3 className="priceProduct">$ {prod.price}</h3>
+        <button className="btnVerMas">Detalles</button>
+      </Link>
+      <hr />
+    </div>
+  );
+});
 
-function Item({prod}) {
-    console.log('item')
-    return (
-        <div 
-            key={prod.id}
-            className='col-md-4'
-        >                        
-            <div className="card w-100 mt-5" >
-                <div className="card-header">
-                    {`${prod.name} - ${prod.categoria}`}
-                </div>
-                <div className="card-body">
-                    <img src={prod.imagenID} alt='' className='w-50' />
-                    {prod.price}                                                            
-                </div>
-                <div className="card-footer">  
-                <Link to={`/detalle/${prod.id}`}>
-                    <button className="btn btn-outline-primary btn-block">
-                        detalle del producto
-                    </button>
-                </Link>                                                      
-                                                                                
-                </div>
-            </div>
-        </div>
-    )
-}
-
-export default Item
+export default Item;

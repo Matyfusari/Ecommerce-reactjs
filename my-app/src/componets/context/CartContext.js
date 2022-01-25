@@ -1,65 +1,84 @@
-import { createContext, useState, useContext } from 'react'
+import { createContext, useState, useContext } from "react";
+const CartContext = createContext([]);
 
+export const useCartContext = () => useContext(CartContext);
 
-const CartContext = createContext([]) 
-
-export const useCartContext = () => useContext(CartContext)  
-
-
-function CartContextProvider({children}) {
-    const [cartList, setCartList] = useState([])
-
-    // function agregarAlCarrito(item) {
-    //     setCartList( [...cartList, item] )    
-    // }
-
-
-
-    function agregarAlCarrito(item) {       
-
-        const index = cartList.findIndex(i => i.id === item.id)//pos    -1
+function CartContextProvider({ children }) {
+  const [cartList, setCartList] = useState([]);
   
-          if (index > -1) {
-            const oldQy = cartList[index].cantidad
-  
-            cartList.splice(index, 1)
 
-            setCartList([...cartList, { ...item, cantidad: item.cantidad + oldQy}])
-
-          } else {
-            setCartList([...cartList, item])
-          }
-      }
-
-      const precioTotal =()=>{
-        return cartList.reduce((acum, prod) => acum + (prod.cantidad * prod.price) , 0)
-      }
-      
-      const mostrarListado =()=>{
-          console.log(cartList)
-      }
-  
-      const borrarItem = (id) => {
-        setCartList( cartList.filter(prod => prod.id !== id) )
+  function addQuantity(product) {
+    const newCartList = cartList.map((item) => {
+      if (item.id === product.id) {
+        item.quantity += 1;
+        if (item.stock < item.quantity) {
+          item.quantity -= 1;
         }
-  
-
-
-      function borrarCarrito() {
-          setCartList([])
       }
+      return item;
+    });
+    setCartList(newCartList);
+  }
+  function removeQuantity(product) {
+    const newCartList = cartList.map((item) => {
+      if (item.id === product.id) {
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+          item.quantity = 1;
+        }
+      }
+      return item;
+    });
+    setCartList(newCartList);
+  }
+  function addToCart(product) {
+    const index = cartList.findIndex((i) => i.id === product.id);
+    if (index > -1) {
+      const prevQuantity = cartList[index].quantity;
+      cartList.splice(index, 1);
+      setCartList([
+        ...cartList,
+        { ...product, quantity: product.quantity + prevQuantity },
+      ]);
+    } else {
+      setCartList([...cartList, product]);
+    }
+  }
+  function deleteFromCart(prod) {
+    setCartList(cartList.filter((item) => item.id !== prod.id));
     
+  }
 
-    return (
-        <CartContext.Provider value={{
-            cartList,
-            agregarAlCarrito,
-            borrarCarrito,
-            precioTotal
-        }}>
-            { children }
-        </CartContext.Provider>
-    )
+  function emptyCart() {
+    setCartList([]);
+    
+  }
+  function totalItems() {
+    return cartList.reduce((acc, item) => acc + item.quantity, 0);
+  }
+  function totalCart() {
+    if ((cartList.reduce((acc, item) => acc + item.price * item.quantity, 0))  < 20000  && cartList.length > 0) {
+      return cartList.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    } else {
+      return cartList.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    }
+  }
+  return (
+    <CartContext.Provider
+      value={{
+        cartList,
+        addToCart,
+        emptyCart,
+        deleteFromCart,
+        totalItems,
+        totalCart,
+        addQuantity,
+        removeQuantity,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 }
 
-export default CartContextProvider
+export default CartContextProvider;

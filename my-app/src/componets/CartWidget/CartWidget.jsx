@@ -1,9 +1,22 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
+import { FaShoppingCart } from "react-icons/fa";
+import "./cart.css";
+const CartWidget = () => {
+  const { cartList, totalItems } = useCartContext();
+  return (
+    <>
+      <li className="cartMD">
+        <NavLink
+          className={({ isActive }) => (isActive ? "isActive" : "")}
+          to="/Cart"
+        >
+          <FaShoppingCart className="icon"/>
+          CARRITO {cartList.length === 0 ? "" : `(${totalItems()})`}
+        </NavLink>
+      </li>
+    </>
+  );
+};
 
-function CartWidget() {
-    return (
-        <a><i class="bi bi-cart-fill"></i></a>
-    )
-}
-
-export default CartWidget
+export default CartWidget;

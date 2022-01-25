@@ -1,39 +1,33 @@
-import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
-import { collection, doc, getDoc, getFirestore } from 'firebase/firestore'
-import ItemDetail from '../ItemDetail/ItemDetail'
-
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import "./ItemDetailContainer.css";
 const ItemDetailContainer = () => {
-    const [loading, setLoading] = useState(true)
-    const [prod, setProd] = useState({})
-    const {id} = useParams()
+  const [prod, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
-    useEffect(() => {        
-       
+  useEffect(() => {
+    const db = getFirestore();
+    const queryProduct = doc(db, `items`, id);
+    getDoc(queryProduct).then((resp) => {
+      setProduct({ id: resp.id, ...resp.data() });
+      setLoading(false);
+    });
+  }, [id]);
 
-            const db = getFirestore()
-            const queryDb = doc(db, 'items', id)
-            getDoc(queryDb)
-            .then(resp => setProd( { id: resp.id, ...resp.data() } ))
-            .catch(err => console.log(err))
-            .finally(()=>setLoading(false))
-               
-    },[]) 
-    console.log(prod)
-    
-    return (
-        <>
-             {loading ? 
-                    <h2>Cargando...</h2>
+  return (
+    <section className="sectionDetail">
+       {loading ? 
+        <h2>Cargando...</h2>
                 :
-                    <div className='border border-3 border-secondary'>
-                        <ItemDetail prod={prod} />                        
-                    </div>
-            }            
-        </>
-    )
-}
+        <ItemDetail prod={prod} />
+      }
+    </section>
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
 
 

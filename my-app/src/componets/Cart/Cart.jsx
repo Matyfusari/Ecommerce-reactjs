@@ -1,128 +1,81 @@
-// import { useContext } from 'react'
-// import { CartContext } from '../../context/CartContext'
 
-import {  addDoc, collection, doc, getFirestore, Timestamp, updateDoc, writeBatch } from "firebase/firestore"
-import { useState } from "react"
-import { useCartContext } from "../context/CartContext"
-
-
-
-function Cart() {
-    const [idOrder, setIdOrder] = useState('')
-    const [dataForm, setDataForm] = useState({
-        name:"", email:"", phone:""
-    })
-    const {  cartList, borrarCarrito, precioTotal  } = useCartContext()
+import { useCartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import "../ItemCount/ItemCount.css";
+import "./Cart.css";
 
 
-    const handleChange = (e) => {
-        // console.log(e.target.name)
-        // console.log(e.target.value)
-        setDataForm({
-            ...dataForm,
-            [e.target.name]: e.target.value
-        })
-    }
-    console.log(dataForm)
-    const generarOrden = (e) =>{
-        e.preventDefault()  
-        
-        
-        // Nuevo objeto de orders    
-        let orden = {}
-        orden.date = Timestamp.fromDate(new Date())
-        //firebase.firestore.Timestamp.fromDate(new Date()); 
+const Cart = () => {
 
-        orden.buyer = dataForm
-        orden.total = precioTotal();
+  const { cartList, emptyCart, deleteFromCart, totalCart, addQuantity, removeQuantity } = useCartContext();
+  
+  return (
+    <main>
+      <h2>Carrito de Compras</h2>
+      {cartList < 1 ? (
+        <>
+          <p>No hay productos en el carrito</p>
+          <Link to="/all" className="backStore">
+            Volver a la tienda
+          </Link>
+        </>
+      ) : (
+        <>
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartList.map((product) => (
+                <tr key={product.id}>
+                  <td>
+                    <img src={product.imagenID} alt={product.name} />
+                    <h6>{product.name}</h6>
+                  </td>
+                  <td>${product.price}</td>
+                  <td>
+                  <button className="remove" onClick={()=>{removeQuantity(product)}}>
+                    <FaMinus className="faQuantity" />
+                  </button>
+                    <input type="number"className="quantity" readOnly value={product.quantity}/>
+                  <button className="add" onClick={()=>{addQuantity(product)}}>
+                    <FaPlus className="faQuantity" />
+                  </button>
+                    </td>
+                  <td>${product.quantity * product.price}</td>
+                  <td>
+                    <button
+                      onClick={() => deleteFromCart(product)}
+                      className="btn-delete"
+                    >
+                      X
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button onClick={emptyCart} className="btn-empty">
+            Vaciar carrito
+          </button>
+          <p>
+            Total: ${totalCart()}
+          </p>
+          <Link to="/checkout" className="checkout">
+            Terminar compra
+          </Link>
+        </>
+      )}
+    </main>
+  );
+};
 
-        orden.items = cartList.map(cartItem => {
-            const id = cartItem.id;
-            const nombre = cartItem.name;
-            const precio = cartItem.price * cartItem.cantidad;
-            
-            return {id, nombre, precio}   
-        })
+export default Cart;
 
-        // Generar la orden 
-        const db = getFirestore()
-        const ordenColeccion = collection(db, 'orders')
-        addDoc(ordenColeccion, orden)
-        .then(resp => setIdOrder(resp.id))
-        .catch(err => console.log(err))
-        .finally(()=> {
-            borrarCarrito()
-            setDataForm({
-                name:"", email:"", phone:""
-            })
-        })
-
-        // modificar update
-         const docModifcar = doc(db, 'items', 'DGupCsKFgil34rMRlzc7')
-         const docModifcar1 = doc(db, 'items', 'I1UAX4AsxZVvHU1QkDCk')
-         const docModifcar2 = doc(db, 'items', 'JqGCf50AzqSjpwuTn9bF')
-         const docModifcar3 = doc(db, 'items', 'VLMc6RaE0cKJaCmuIASi')
-
-         updateDoc(docModifcar, {
-             stock: 99
-         })
-         .then(resp => console.log('modificado'))
-
-        // Escritura por lotes
-         const batch = writeBatch(db)
-         batch.update(docModifcar, {
-             stock: 90
-         })
-         batch.update(docModifcar1, {
-             stock: 99
-         })
-         batch.update(docModifcar2, {
-            stock: 99
-        })
-        batch.update(docModifcar3, {
-            stock: 99
-        })
-         batch.commit()
-         console.log(orden)
-
-
-      
-
-
-    }
-
-    return (
-        <div>
-            {idOrder.length !== 0 && idOrder}
-            {  cartList.map(prod=> <li>{prod.name}   {prod.cantidad}</li>) }
-            <form 
-                onSubmit={generarOrden} 
-                onChange={handleChange} 
-            >
-                <input 
-                    type='text' 
-                    name='name' 
-                    placeholder='name' 
-                    value={dataForm.name}
-                /><br />
-                <input 
-                    type='text' 
-                    name='phone'
-                    placeholder='tel' 
-                    value={dataForm.phone}
-                /><br/>
-                <input 
-                    type='email' 
-                    name='email'
-                    placeholder='email' 
-                    value={dataForm.email}
-                /><br/>
-                <button>Generar Orden</button>
-            </form>
-            <button onClick={borrarCarrito} >Vaciar Carrito</button>
-
-        </div>
-    )
-}
-
-export default Cart
