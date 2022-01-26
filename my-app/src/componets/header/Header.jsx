@@ -11,7 +11,7 @@ const Header = () => {
     
       
     <header className="headerL">
-        <Link className="brand" to="Home/">
+        <Link className="brand" to="/">
           <h1>
           
             <img src={Logo} alt="Logo" className="logo" />

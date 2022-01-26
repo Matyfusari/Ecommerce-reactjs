@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
-import "./cart.css";
+import "./carttt.css";
 const CartWidget = () => {
   const { cartList, totalItems } = useCartContext();
   return (

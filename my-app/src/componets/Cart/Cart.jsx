@@ -11,11 +11,11 @@ const Cart = () => {
   const { cartList, emptyCart, deleteFromCart, totalCart, addQuantity, removeQuantity } = useCartContext();
   
   return (
-    <main>
-      <h2>Carrito de Compras</h2>
+    <main className="Main">
+      <h2 className="titCart">Carrito de Compras</h2>
       {cartList < 1 ? (
         <>
-          <p>No hay productos en el carrito</p>
+          <p className="titCart">No hay productos en el carrito</p>
           <Link to="/all" className="backStore">
             Volver a la tienda
           </Link>

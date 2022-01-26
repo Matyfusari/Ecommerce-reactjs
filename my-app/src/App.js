@@ -19,11 +19,10 @@ function App() {
       <BrowserRouter>
               <div className='App'>
                <Header/>
-              
-                <Routes>
+            <Routes>
                       <Route 
                         
-                        path="Home/" 
+                        path="/" 
                         element={ <Home greetings="Bienvenidos A Hamdade Style By Marita" />} 
                      />
                      <Route
@@ -61,3 +60,5 @@ function App() {
 }
 
 export default App;
+
+

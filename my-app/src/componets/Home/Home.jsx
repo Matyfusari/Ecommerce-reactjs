@@ -7,7 +7,8 @@ const Home = ({ greetings }) => {
       <Carrusel />
       <p className="enunciado">
         
-        <small >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur tempore obcaecati esse temporibus repudiandae dicta aperiam laudantium et officia quam aliquid, numquam fuga corrupti accusamus tempora iusto recusandae itaque magnam?</small>
+        <small >En Hamdade Style By Marita, Todos los productos son artesanales, los de regaleria son hechos con totora, y la indumentaria para mascotas son realizados con lana acrilica</small>
+        
       </p>
     </main>
   );

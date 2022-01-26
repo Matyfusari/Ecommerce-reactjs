@@ -9,7 +9,7 @@ const Footer = () => {
       <div class="container-fluid">
       <footer class=" Row footerbg paddingTB">
         <div class="col-lg-4 col-xs-12">
-          <Link to="Home/"><img src={Logo} alt="Logo" className="imgFoot" /></Link>
+          <Link to="/"><img src={Logo} alt="Logo" className="imgFoot" /></Link>
         </div>
         <div class="col-lg-4 col-xs-12">
           <h3 class="txtFooter positionText">Sitio web creado por Fusari Matias</h3>

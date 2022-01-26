@@ -25,6 +25,7 @@ const ItemDetail = ({ prod, onAdd }) => {
       />
       <p className="priceDetailProduct">Precio: ${prod.price}</p>
       <p className="stock">Stock: {prod.stock}</p>
+      <p className="descriptionDetailProduct">{prod.Talle}</p>
       <p className="descriptionDetailProduct">{prod.description}</p>
       {goCart === false ? (
         <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} />
