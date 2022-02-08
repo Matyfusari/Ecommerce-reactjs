@@ -1,41 +1,11 @@
-
-
-@media only screen and (min-width: 375px) {
-  .headerMD {
-    background-color: #FFE3FC ;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .navbarL {
-    display: none;
-  }
-  .brand {
-    text-decoration: none;
-  }
-  .logo {
-    width: 5rem;
-    height: 5rem;
-    margin: 0.9rem;
-  }
-  
-  .logo:hover {
-    transform: scale(1.2);
-  }
-  .headerL {
-    display: none;
-  }
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: black;
-  }
+.logo{
+  width: 30%;
+  height: 30%;
+}
+.logo:hover {
+  transform: scale(1.2);
 }
 @media only screen and (min-width: 768px) {
-  .headerMD {
-    display: none;
-  }
 
   .headerL {
     display: flex;
@@ -45,36 +15,41 @@
     padding: 1rem;
     background-color: #FFD7FA;
     color: #fff;
-    font-size: 1.5rem;
-    font-weight: 700;
+    
+   
   }
   .innerHeader {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: var(--color-secundario);
+    background-color: var(--color-terciario);
     color: #fff;
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
-  .navbarL{
-    display: block;
+    font-size: 2.0rem;
+    font-weight: 700;
+    position: relative;
+    bottom: 10px;
+    left: 500px;
   }
   .cartL {
     text-decoration: none;
-    color:#fff; 
+    color:black; 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    
   }
+  
   .cartL:hover {
-    color: #fff;
+    color:white;
     transform: scale(1.1);
     transition: .6s;
   }
+
+ 
 }
+
 @media only screen and (min-width: 1240px){
     .logo {
         width: 14rem;
@@ -108,7 +83,9 @@
         font-weight: 700;
         position: relative;
         bottom: 10px;
+        left: 5px;
 
      
       }
 }
+
