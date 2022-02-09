@@ -28,7 +28,7 @@ function App() {
                      <Route
                         path="/all"
                         element={
-                      <ItemListContainer greetings='Nuestros Productos' />}
+                      <ItemListContainer greetings='' />}
                      />
                      <Route 
                         exact

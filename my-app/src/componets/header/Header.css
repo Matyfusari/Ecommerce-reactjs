@@ -1,4 +1,34 @@
 
+@media only screen and (min-width: 0px) and (max-width: 360px){
+  .logo{
+    width: 60%;
+    height: 60%;
+  }
+  .logo:hover {
+    transform: scale(1.2);
+  }
+  .headerL {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFD7FA;
+    color: #fff;
+    position: relative;
+   
+  }
+  .link{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 2.0rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 500;
+    position: relative;
+    top: 25px;
+  }
+}
 
 @media only screen and (min-width: 0px) and (max-width: 767px){
   .logo{
@@ -29,8 +59,7 @@
     font-weight: 500;
     position: relative;
     top: 25px;
-   
-}
+  }
 }
 
 

@@ -2,6 +2,7 @@
   main {
     margin: auto;
     height: auto;
+    
   }
   .backStore {
     width: 10rem;
@@ -20,7 +21,19 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-primario);
-    margin-bottom: 1rem;
+    margin-bottom: 14px;
   }
   
 }
+@media only screen and (min-width: 0px) and (max-width: 767px){
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    position: relative;
+    margin-bottom: 14px;
+  }
+}
+
+
+

@@ -71,18 +71,18 @@ margin-bottom: 3rem;
     
   .enunciado {
     
-    margin: 3rem;
-    font-weight: 900;
+    margin: 2rem;
+    font-weight: 950;
     color: var(--color-secundario);
     margin-bottom: 1rem;
     display: flex;
     position: relative;
-    bottom: 25px;
+    bottom: 55px;
   }
   
   .enunciado small {
     margin-top: 0rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--color-secundario);
     font-weight: 650;
   }
@@ -91,6 +91,8 @@ margin-bottom: 3rem;
     font-weight: bold;
     font-size: 25px;
     text-align: center;
+    position: relative;
+    bottom: 50px;
 
   }
 }

@@ -1,7 +1,7 @@
 @media only screen and (min-width: 375px) {
     .btn-delete {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.2rem;
+      height: 1.2rem;
       color: #fff;
       background-color: var(--color-primario);
       font-size: 1rem;
@@ -13,15 +13,15 @@
     .infoCart {
       background-color: var(--color-primario);
       border-radius: .5rem;
-      padding: .5rem;
+      padding: 1rem;
       color: #fff;
       font-weight: 500;
     }
     .btn-empty {
-      width: 10rem;
-      height: 2rem;
-      margin: 2rem;
-      padding: .5rem;
+      width: 12rem;
+      height: 1.5rem;
+      margin: 1.5rem;
+      padding: 1rem;
       color: #fff;
       background-color: var(--color-primario);
       font-size: .6rem;
@@ -30,7 +30,7 @@
       border-radius: .3rem;
     }
     th {
-      padding: 1rem;
+      padding:1rem;
     }
     tbody tr {
       height: 3rem;
@@ -68,8 +68,8 @@
   }
   @media only screen and (min-width: 0px) and (max-width: 767px){
     .btn-delete {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.2rem;
+      height: 1.2rem;
       color: #fff;
       background-color: var(--color-primario);
       font-size: 1rem;
@@ -82,7 +82,7 @@
     .infoCart {
       background-color: var(--color-primario);
       border-radius: .5rem;
-      padding: .5rem;
+      padding: 1rem;
       color: #fff;
       font-weight: 500;
       text-align: center;
@@ -102,10 +102,10 @@
     
     }
     th {
-      padding: 1rem;
+      padding: 0.5rem;
     }
     tbody tr {
-      height: 3rem;
+      height: 8rem;
       width: auto;
       border-bottom: .01rem solid var(--color-primario);
     }
@@ -114,8 +114,8 @@
     }
     tr img {
       margin: .5rem;
-      width: 4rem;
-      height: 4rem;
+      width: 7rem;
+      height: 7rem;
       border-radius: 1rem;
     }
     .checkout{
@@ -140,8 +140,8 @@
       text-align: center;
       text-decoration: none;
       background-color: var(--color-primario);
-      width: 20rem;
-      height: 4rem;
+      width: 15rem;
+      height: 2rem;
       margin: 0rem;
       padding: .3rem;
       color: #fff;
@@ -149,7 +149,7 @@
       font-size: 15px;
       font-weight: 100;
       border: 1px solid #fff;
-      border-radius: .3rem;
+      border-radius: 1rem;
       position: relative;
       left: 0px;
       
@@ -157,8 +157,105 @@
     .titCart{
       text-align: center;
       font-weight: bold;
+      font-weight: 600;
     }
     
 
     
+  }
+  @media only screen and (min-width: 0px) and (max-width: 360px){
+    .btn-delete {
+      width: 1.2rem;
+      height: 1.2rem;
+      color: #fff;
+      background-color: var(--color-primario);
+      font-size: 1rem;
+      font-weight: 900;
+      border: none;
+      border-radius: 1rem;
+      text-align: center;
+    
+    }
+    .infoCart {
+      background-color: var(--color-primario);
+      border-radius: .5rem;
+      padding: 1rem;
+      color: #fff;
+      font-weight: 500;
+      text-align: center;
+    }
+    .btn-empty {
+      width: 10rem;
+      height: 2rem;
+      margin: 2rem;
+      padding: .1rem;
+      color: #fff;
+      background-color: var(--color-primario);
+      font-size: .6rem;
+      font-weight: 700;
+      border: 1px solid #fff;
+      border-radius: .3rem;
+      
+    
+    }
+    th {
+      padding: 0.1rem;
+    }
+    tbody tr {
+      height: 8rem;
+      width: auto;
+      border-bottom: .01rem solid var(--color-primario);
+    }
+    tbody tr:nth-child(odd) {
+      background-color: var(--color-sombreado);
+    }
+    tr img {
+      margin: .5rem;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 1rem;
+    }
+    .checkout{
+      width: 10rem;
+      height: 2rem;
+      margin: 2rem;
+      padding: .5rem;
+      color: #fff;
+      background-color: var(--color-primario);
+      font-size: .6rem;
+      font-weight: 700;
+      border: 1px solid #fff;
+      border-radius: .3rem;
+      text-decoration: none;
+      text-align: center;
+    }
+    .checkout:hover{
+      background-color: var(--color-secundario);
+      color: #fff;
+    }
+    .backStore{
+      text-align: center;
+      text-decoration: none;
+      background-color: var(--color-primario);
+      width: 15rem;
+      height: 2rem;
+      margin: 0rem;
+      padding: .3rem;
+      color: #fff;
+      background-color: var(--color-primario);
+      font-size: 15px;
+      font-weight: 100;
+      border: 1px solid #fff;
+      border-radius: 1rem;
+      position: relative;
+      left: 0px;
+      
+    }
+    .titCart{
+      text-align: center;
+      font-weight: bold;
+      font-weight: 600;
+    }
+    
+
   }
