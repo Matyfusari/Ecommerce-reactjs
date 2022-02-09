@@ -42,7 +42,9 @@
     text-align: center;
     border-radius: 3rem;
     color: var(--color-primario);
-    padding: 2rem;
+    padding: 1rem;
+    position: relative;
+    bottom: 55px ;
     
   }
   .order-success {
@@ -57,5 +59,7 @@
     width: 100%;
     height: auto;
     border-radius: 3rem;
+    
+   
   }
 }

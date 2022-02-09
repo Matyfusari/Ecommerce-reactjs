@@ -31,7 +31,7 @@
     font-weight: 700;
     color: var(--color-primario);
     position: relative;
-    margin-bottom: 14px;
+    bottom: 8px;
   }
 }
 
