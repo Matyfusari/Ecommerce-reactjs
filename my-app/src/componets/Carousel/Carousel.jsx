@@ -13,10 +13,10 @@ function Carousel() {
           <img src="https://i.ibb.co/nsr0Dv0/slider1.jpg" class="d-block w-100" alt="..."/>
         </div>
         <div class="carousel-item">
-          <img src="https://i.ibb.co/nsr0Dv0/slider1.jpg" class="d-block w-100" alt="..."/>
+          <img src="https://i.ibb.co/sqX2d7S/sliderrr.jpg" class="d-block w-100" alt="..."/>
         </div>
         <div class="carousel-item">
-          <img src="https://i.ibb.co/nsr0Dv0/slider1.jpg" class="d-block w-100" alt="..."/>
+          <img src="https://i.ibb.co/cJgZPRM/Slider123.jpg" class="d-block w-100" alt="..."/>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">

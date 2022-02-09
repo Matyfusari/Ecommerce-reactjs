@@ -57,6 +57,7 @@ margin-bottom: 3rem;
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
+   
   }
   
   .enunciado small {
@@ -64,6 +65,15 @@ margin-bottom: 3rem;
     font-size: 2rem;
     color: var(--color-secundario);
     font-weight: 400;
+  }
+  .Titulo{
+    color: var(--color-secundario);
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    position: relative;
+    bottom: 50px;
+
   }
   
 }

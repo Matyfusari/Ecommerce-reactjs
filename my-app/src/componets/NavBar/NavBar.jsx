@@ -31,10 +31,6 @@ const NavBar = () => {
               PRODUCTOS
             </NavLink>
             
-              
-              
-              
-            
           </li>
           <CartWidget />
         </ul>
