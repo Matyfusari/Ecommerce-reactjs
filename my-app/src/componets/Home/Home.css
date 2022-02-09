@@ -1,3 +1,4 @@
+
 @media only screen and (min-width: 360px) {
   main {
     text-align: center;
@@ -7,7 +8,7 @@
     background-color: #FFE3FC ;
     width: 100%;
     height: auto;
-    padding: 2rem 0;
+    padding: 0rem ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,8 +65,10 @@ margin-bottom: 3rem;
     color: var(--color-secundario);
     font-weight: 400;
   }
+  
 }
 @media only screen and (min-width: 0px) and (max-width: 767px){
+    
   .enunciado {
     
     margin: 3rem;

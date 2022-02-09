@@ -1,12 +1,13 @@
-.logo{
-  width: 30%;
-  height: 30%;
-}
-.logo:hover {
-  transform: scale(1.2);
-}
-@media only screen and (min-width: 768px) {
 
+
+@media only screen and (min-width: 0px) and (max-width: 767px){
+  .logo{
+    width: 80%;
+    height: 80%;
+  }
+  .logo:hover {
+    transform: scale(1.2);
+  }
   .headerL {
     display: flex;
     flex-direction: row;
@@ -15,40 +16,25 @@
     padding: 1rem;
     background-color: #FFD7FA;
     color: #fff;
-    
-   
+    position: relative;
+    margin-bottom: 60px;
   }
-  .innerHeader {
+  .link{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: var(--color-terciario);
-    color: #fff;
     font-size: 2.0rem;
     font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 500;
     position: relative;
-    bottom: 10px;
-    left: 500px;
-  }
-  .cartL {
-    text-decoration: none;
-    color:black; 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 1.5rem;
-    
-  }
-  
-  .cartL:hover {
-    color:white;
-    transform: scale(1.1);
-    transition: .6s;
-  }
-
- 
+    top: 25px;
+   
 }
+}
+
+
+
 
 @media only screen and (min-width: 1240px){
     .logo {
@@ -65,6 +51,7 @@
         align-items: center;
         justify-content: space-between;
         font-size: 1.5rem;
+       
         
       }
       
@@ -73,19 +60,29 @@
         transform: scale(1.1);
         transition: .6s;
       }
-      .innerHeader {
+      
+      .link{
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        background-color: var(--color-terciario);
-        color: #fff;
         font-size: 2.0rem;
         font-weight: 700;
+        font-size: 2.5rem;
+        font-weight: 500;
         position: relative;
-        bottom: 10px;
-        left: 5px;
-
-     
+        bottom: 60px;
+        left: 50px;
+      
       }
+      .headerL {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #FFD7FA;
+        color: #fff;
+      }
+        
 }
 

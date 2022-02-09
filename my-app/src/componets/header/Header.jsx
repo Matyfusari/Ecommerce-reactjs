@@ -10,14 +10,14 @@ const Header = () => {
     <>
     
       
-    <header className="headerL">
+      <header className="headerL">
         <Link className="brand" to="/">
           <h1>
           
             <img src={Logo} alt="Logo" className="logo" />
           </h1>
         </Link>
-        <div className="innerHeader">
+        <div className="headerL  ">
         <div className="rrss">
             <ul className="fooUl">
               <li className="fooUlLi">
