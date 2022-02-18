@@ -65,7 +65,7 @@ const Cart = () => {
           <button onClick={emptyCart} className="btn-empty">
             Vaciar carrito
           </button>
-          <p>
+          <p className="price">
             Total: ${totalCart()}
           </p>
           <Link to="/checkout" className="checkout">

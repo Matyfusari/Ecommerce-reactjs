@@ -1,7 +1,3 @@
-
-
-
-
 @media only screen and (min-width: 1240px){
   .cardProduct {
     padding: .5rem;
@@ -74,7 +70,7 @@
   }
 
 }
-@media only screen and (min-width: 361px) and (max-width: 767px){
+@media only screen and (min-width: 375px) and (max-width: 767px){
   .cardProduct {
     padding: 2.9rem;
     margin: 2.9rem;
@@ -155,13 +151,94 @@
   }
   
 }
-
-@media only screen and (min-width: 0px) and (max-width: 360px){
+@media only screen and (min-width: 0px) and (max-width: 359px){
   .cardProduct {
-    padding: 2.7rem;
-    margin: 2.7rem;
-    height: 21rem;
-    width: 17rem;
+    padding: 2.5rem;
+    margin: 2.5rem;
+    height: 23rem;
+    width: 16rem;
+    border-radius: 1rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 30px;
+  }
+  
+  .linkItem {
+    text-decoration: none;
+    color: var(--color-primario);
+  }
+  .linkItem:hover {
+    color: var(--color-secundario);
+  }
+  .imgCardProduct {
+    width: 110%;
+    border-radius: 1rem;
+    position: relative;
+    bottom: 37px;
+  }
+  .imgCardProduct:hover {
+    transform: scale(1.2);
+    transition: .5s ease all;
+  }
+  .nameProduct {
+    height: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-primario);
+    text-align: center;
+    margin: .5rem;
+    position: relative;
+    bottom: 22px;
+  }
+  .priceProduct {
+    height: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1.5rem;
+    position: relative;
+    bottom: 25px;
+    font-weight: bold;
+    left: 35px;
+    
+  }
+  .btnVerMas {
+    width: 4rem;
+    height: 1.5rem;
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+    border-radius: .5rem;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    margin: .5rem;
+    position: relative;
+    left: 45px;
+    bottom: 40px;
+  }
+  hr {
+    width: 15rem;
+    border: 0;
+    border-top: 3px solid var(--color-primario);
+    border-bottom: 3px solid var(--color-primario);
+    height: 0;
+    position: relative;
+    bottom: 60px;
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 374px){
+  .cardProduct {
+    padding: 2.5rem;
+    margin: 2.5rem;
+    height: 23rem;
+    width: 16rem;
     border-radius: 1rem;
     font-weight: 400;
     display: flex;
@@ -224,10 +301,11 @@
     text-decoration: none;
     margin: .5rem;
     position: relative;
+    
     bottom: 40px;
   }
   hr {
-    width: 20rem;
+    width: 15rem;
     border: 0;
     border-top: 3px solid var(--color-primario);
     border-bottom: 3px solid var(--color-primario);
@@ -236,6 +314,70 @@
     bottom: 60px;
   }
 }
-
-
-
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .cardProduct {
+    padding: .5rem;
+    margin: .4rem;
+    height: 25rem;
+    width: 11rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ 
+  .linkItem {
+    text-decoration: none;
+    color: var(--color-primario);
+  }
+  .linkItem:hover {
+    color: var(--color-secundario);
+  }
+  .imgCardProduct {
+    width: 85%;
+    margin: .4rem;
+    border-radius: 1rem;
+  }
+  .imgCardProduct:hover {
+    transform: scale(1.2);
+    transition: .5s ease all;
+  }
+  .nameProduct {
+    height: 1rem;
+    font-size: .8rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--color-primario);
+    text-align: center;
+    margin: .5rem;
+  }
+  .priceProduct {
+    height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1.5rem;
+  }
+  .btnVerMas {
+    width: 4rem;
+    height: 1.5rem;
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-secundario);
+    border-radius: .5rem;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    margin: .5rem;
+  }
+  hr {
+    width: 11rem;
+    border: 0;
+    border-top: 3px solid var(--color-primario);
+    border-bottom: 3px solid var(--color-primario);
+    height: 0;
+  }
+}

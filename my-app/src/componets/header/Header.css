@@ -1,8 +1,8 @@
 
 @media only screen and (min-width: 0px) and (max-width: 360px){
   .logo{
-    width: 60%;
-    height: 60%;
+    width: 10%;
+    height: 10%;
   }
   .logo:hover {
     transform: scale(1.2);
@@ -21,9 +21,9 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: 500;
     position: relative;
     top: 25px;
@@ -115,3 +115,51 @@
         
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .logo {
+    width: 14rem;
+    height: 14rem;
+    margin: 0.9rem;
+
+  }
+  .cartL {
+    text-decoration: none;
+    color:black; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+   
+    
+  }
+  
+  .cartL:hover {
+    color:white;
+    transform: scale(1.1);
+    transition: .6s;
+  }
+  
+  .link{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 2.0rem;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 500;
+    position: relative;
+    bottom: 60px;
+    left: 50px;
+  
+  }
+  .headerL {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFD7FA;
+    color: #fff;
+  }
+}
