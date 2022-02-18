@@ -144,8 +144,7 @@
       font-weight: 500;
       border: 1px solid var(--color-primario);
       border-radius: 1rem;
-      position: relative;
-      left: 18px;
+      
     }
     .quantity {
       text-align: center;
@@ -166,8 +165,6 @@
       font-weight: 500;
       border: 1px solid var(--color-primario);
       border-radius: 1rem;
-      position: relative;
-      left: 18px;
     }
     .addCart {
       width: 9rem;
